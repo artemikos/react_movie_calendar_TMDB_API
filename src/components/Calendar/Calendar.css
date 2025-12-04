@@ -1,0 +1,124 @@
+/* Calendar/Calendar.css */
+.calendar {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h3 {
+    color: #2d3436;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.nav-btn {
+    background: #0984e3;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: #0770c4;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: 600;
+    color: #636e72;
+    font-size: 0.9rem;
+    padding: 8px 0;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.calendar-day:hover {
+    background: #e9ecef;
+    border-color: #74b9ff;
+    transform: scale(1.05);
+}
+
+.calendar-day.today {
+    background: #74b9ff;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(116, 185, 255, 0.3);
+}
+
+.calendar-day.selected {
+    background: #00b894;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 184, 148, 0.3);
+}
+
+.calendar-day.empty {
+    background: transparent;
+    cursor: default;
+}
+
+.calendar-day.empty:hover {
+    background: transparent;
+    transform: none;
+    border-color: transparent;
+}
+
+.btn-today {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #2d3436;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.btn-today:hover {
+    background: #1e272e;
+}
