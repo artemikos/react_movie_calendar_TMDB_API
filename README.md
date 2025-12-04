@@ -1,70 +1,139 @@
-# Getting Started with Create React App
+🎬 Movie Calendar - React приложение с TMDB API
+https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+https://img.shields.io/badge/TMDB_API-01D277?style=for-the-badge&logo=themoviedatabase&logoColor=white
+https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React приложение для просмотра релизов фильмов по датам с использованием TMDB API. Проект создан как учебный проект по React и работе с внешними API.
 
-## Available Scripts
+✨ Особенности
+📅 Интерактивный календарь - выбор любой даты для просмотра релизов
 
-In the project directory, you can run:
+🎬 Фильмы на дату - автоматическая загрузка фильмов, выпущенных в выбранный день
 
-### `npm start`
+🔥 Популярные фильмы - кнопка для просмотра текущих популярных фильмов
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+⭐ Рейтинги и голоса - отображение рейтинга TMDB и количества голосов
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🔗 Ссылки на IMDB - переход на страницу фильма в IMDB
 
-### `npm test`
+📱 Адаптивный дизайн - работает на мобильных и десктопах
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🚀 Быстрый старт
+1. Клонирование репозитория
+bash
+git clone https://github.com/artemikos/react_movie_calendar_TMDB_API.git
+cd react_movie_calendar_TMDB_API
+2. Установка зависимостей
+bash
+npm install
+3. Настройка API ключа
+Получите бесплатный API ключ на The Movie Database
 
-### `npm run build`
+Откройте файл src/utils/MovieAPI.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Замените 'ВАШ_API_КЛЮЧ' на ваш ключ:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+javascript
+const API_KEY = 'ваш_ключ_здесь';
+4. Запуск приложения
+bash
+npm start
+Приложение будет доступно по адресу: http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📁 Структура проекта
+text
+react_movie_calendar_TMDB_API/
+├── src/
+│   ├── components/          # React компоненты
+│   │   ├── Calendar/        # Календарь
+│   │   ├── MovieList/       # Список фильмов
+│   │   └── MovieCard/       # Карточка фильма
+│   ├── utils/
+│   │   └── MovieAPI.js      # Работа с TMDB API
+│   ├── App.js              # Главный компонент
+│   ├── App.css             # Общие стили
+│   └── index.js            # Точка входа
+├── public/
+└── package.json
+🎯 Использование
+Выбор даты в календаре - кликните на любой день для просмотра релизов
 
-### `npm run eject`
+Кнопка "Popular Movies" - возвращает к списку популярных фильмов
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Кнопка "Today" - показывает релизы на сегодняшнюю дату
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Клик на фильм - открывает страницу фильма на IMDB
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Навигация по месяцам - кнопки ◀ ▶ для перехода между месяцами
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🛠 Технологии
+React 18 - библиотека для построения пользовательских интерфейсов
 
-## Learn More
+CSS Modules - изолированные стили для компонентов
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+TMDB API - база данных фильмов и сериалов
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Fetch API - для HTTP запросов
 
-### Code Splitting
+Git - контроль версий
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+📚 Компоненты
+Calendar
+Интерактивный календарь с возможностью выбора даты, навигацией по месяцам и подсветкой сегодняшнего дня.
 
-### Analyzing the Bundle Size
+MovieList
+Отображает список фильмов с заголовком, показывающим выбранную дату или статус "Popular Movies".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+MovieCard
+Карточка фильма с постером, рейтингом, датой релиза, кратким описанием и кнопкой для перехода на IMDB.
 
-### Making a Progressive Web App
+🔧 API Methods
+javascript
+// Получить фильмы по дате
+MovieAPI.getMoviesByDate(year, month, day)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+// Получить популярные фильмы
+MovieAPI.getPopularMovies()
 
-### Advanced Configuration
+// Получить URL постера
+MovieAPI.getPosterUrl(path)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+// Получить ссылку на IMDB
+MovieAPI.getIMDBLink(imdbId)
+📱 Адаптивность
+Приложение адаптировано для различных устройств:
 
-### Deployment
+Desktop (1200px+) - две колонки (календарь + фильмы)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Tablet (768px-1199px) - две колонки с адаптивной сеткой
 
-### `npm run build` fails to minify
+Mobile (до 767px) - одна колонка, адаптивная сетка фильмов
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🧪 Демо данные
+Если TMDB API недоступен, приложение использует демо-данные для отображения функционала.
+
+🤝 Вклад в проект
+Форкните репозиторий
+
+Создайте ветку для новой функциональности
+
+Внесите изменения
+
+Создайте Pull Request
+
+📄 Лицензия
+Этот проект создан для учебных целей. TMDB API лицензирован отдельно.
+
+👨‍💻 Автор
+Artemikos
+
+GitHub: @artemikos
+
+Проект: Movie Calendar
+
+🙏 Благодарности
+The Movie Database за предоставление API
+
+React за прекрасную библиотеку
+
+Сообществу разработчиков за вдохновение
